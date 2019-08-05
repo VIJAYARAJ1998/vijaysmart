@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
+                 <div class="item">
                     <img class="img" src="resources/images/image 2.jpg" alt="Second slide" height="100%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
@@ -54,6 +54,36 @@
                     </div>
                 </div>
             </div>
+            <div class="item">
+            <div style= float: center; ">
+                    <img class="img"   src="resources/images/images4.png" alt="seventh slide" height="100%" width="100%">
+                    <div class="container">
+                            <h1>ALL IN ONE WORLD</h1>
+                            <p>Art of Invisibility</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                <div style="width: 500px; height: 750px; float: right; ">
+                    <img class="img" src="resources/images/images3.jfif" alt="sixth slide" height="50%" width="75%">
+                    <div class="container">
+                            <h1>ALL IN ONE WORLD</h1>
+                            <p>Art of Invisibility</p>
+                        </div>
+                    </div>
+                </div>
+                 
+                 <div class="item">
+                    <img class="img" src="resources/images/images2.jpg" alt="fifth slide" height="50%" width="50%">
+                    <div class="container">
+                            <h1>ALL IN ONE WORLD</h1>
+                            <p>Art of Invisibility</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
@@ -63,7 +93,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div><!-- /.carousel -->
-
+         
 
 </div>
 
