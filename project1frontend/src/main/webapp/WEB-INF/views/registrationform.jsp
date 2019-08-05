@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>sign up</title>
+<h3> <font color="red"><center>Sign Up</center></font></h3>
 <link href="<c:url value='/resources/css/registration.css'></c:url>" rel="stylesheet">
 <script type="text/javascript"
 	src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
@@ -58,6 +59,8 @@ $(document).ready(function(){
 })
 </script>
 </head>
+<br></br>
+<br></br>
 <body>
 <div class="container">
 <c:url value="/all/registercustomer" var="url"></c:url>
@@ -97,7 +100,8 @@ $(document).ready(function(){
 
 <form:label path="billingaddress.city">Enter city</form:label>
 <form:input path="billingaddress.city" id="billingaddress.city"/>
-
+<br>
+<br>
 <form:label path="billingaddress.state">Enter state</form:label>
 <form:input path="billingaddress.state" id="billingaddress.state"/>
 
@@ -115,7 +119,8 @@ Check this if shipping address is same as billing address
 
 <form:label path="shippingaddress.streetname">Enter streetname</form:label>
 <form:input path="shippingaddress.streetname" id="shippingaddress.streetname"/>
-
+<br>
+<br>
 <form:label path="shippingaddress.city">Enter city</form:label>
 <form:input path="shippingaddress.city" id="shippingaddress.city"/>
 
@@ -128,7 +133,10 @@ Check this if shipping address is same as billing address
 <form:label path="shippingaddress.zipcode">Enter zipcode</form:label>
 <form:input path="shippingaddress.zipcode" id="shippingaddress.zipcode"/>
 <br>
-<input type="submit" value="Register" style="background-color:maroon;">
+<br>
+<br>
+		<td colspan="2"><center>
+<input type="submit" value="Register" style="Italic">
 
 </form:form>
 </div>
