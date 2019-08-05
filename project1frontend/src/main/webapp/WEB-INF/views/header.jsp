@@ -41,6 +41,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href='<c:url value='/home'></c:url>' class="fontSize">Home</a></li>
 				<li><a href="<c:url value='/aboutus'></c:url>" >About Us</a></li>
+				<li><a href="<c:url value='/contactus'></c:url>" >Contact Us</a></li>
 				<li><a href="<c:url value='/all/getallproducts'></c:url>">Browse all products</a>
 				<li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -48,7 +49,7 @@
 					
 				<ul class="dropdown-menu">
 				<c:forEach items="${categories}" var="category">
-				<li><a href="<c:url value='/all/searchByCategory?searchCondition=${category.categoryName }'></c:url>">${category.categoryDesc}</a>				</li>
+				<li><a href="<c:url value='/all/searchByCategory?searchCondition=${category.categoryname }'></c:url>">${category.categoryDesc}</a>				</li>
 				
 				</c:forEach>
 				<li>
@@ -66,10 +67,15 @@
 			   <li><a href="<c:url value='/admin/getproductform'></c:url>">Add Product</a></li>
 			    </security:authorize> 
 				
+			    <security:authorize access="hasRole('ROLE_ADMIN')">
+			   <li><a href="<c:url value='/admin/getsupplierform'></c:url>">Add Supplier</a></li>
+			    </security:authorize> 
+				
 			   
 			   <security:authorize access="hasRole('ROLE_USER')">
 			   <li><a href="<c:url value='/cart/getcart'></c:url>"><span class="glyphicon glyphicon-shopping-cart"></span>(${cartSize})</a></li>
 			   </security:authorize>
+			   
 			
 			    
 			   
