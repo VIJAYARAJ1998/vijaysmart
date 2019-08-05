@@ -17,7 +17,7 @@
 					<td colspan="2">Category Info</td>
 				</tr>
 				<tr>
-					<td>Category Name</td>
+					<td>Category name</td>
 					<td><input type="text" name="catName" /></td>
 				</tr>
 				<tr>
@@ -46,7 +46,7 @@
 					
 				<tr>
 						<td>${category.categoryId}</td>
-						<td>${category.categoryName}</td>
+						<td>${category.categoryname}</td>
 						<td>${category.categoryDesc}</td>
 						<td>
 						<a href="<c:url value="/editCategory/${category.categoryId}"/>"class="btn btn-success">Edit</a>
