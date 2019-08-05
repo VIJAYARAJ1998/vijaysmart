@@ -1,4 +1,4 @@
-package com.niit.dao;
+ package com.niit.dao;
 
 import java.util.List;
 
@@ -25,6 +25,18 @@ private SessionFactory sessionFactory;
 		Session session=sessionFactory.getCurrentSession();
 		User user=(User)session.get(User.class,email);
 		return user;
+	}
+	public void updatecartItem( int cartItem) 
+	{
+		Session session=sessionFactory.getCurrentSession();
+		session.saveOrUpdate(cartItem);
+		
+	}
+	//public CartItem getCartItem(int CartItemId) 
+	{
+		//return CartItem ;
+	 
+		
 	}
 	public List<CartItem> getCart(String email) {
 		Session session=sessionFactory.getCurrentSession();
