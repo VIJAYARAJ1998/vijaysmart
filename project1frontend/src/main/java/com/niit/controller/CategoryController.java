@@ -36,7 +36,7 @@ public class CategoryController
 	public String saveCategoryDetail(@RequestParam("catName")String CategoryName,@RequestParam("catDesc") String CategoryDesc,Model m)
 	{
 		Category category=new Category();
-		category.setCategoryName(CategoryName);
+		category.setCategoryname(CategoryName);
 		category.setCategoryDesc(CategoryDesc);
 		categoryDao.addCategory(category);
 		
@@ -74,7 +74,7 @@ public class CategoryController
 	 public String UpdateCategory(Model m,@RequestParam("catId")int CategoryId,@RequestParam("catName")String categoryName,@RequestParam("catDesc")String categoryDesc)
 	 {
 		 Category category=categoryDao.getCategory(CategoryId);
-		 category.setCategoryName(categoryName);
+		 category.setCategoryname(categoryName);
 		 category.setCategoryDesc(categoryDesc);
 		 categoryDao.updateCategory(category);
 		 List<Category> getAllCategories=categoryDao.getAllCategories();
