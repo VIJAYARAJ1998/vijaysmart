@@ -40,6 +40,10 @@ public String homePage(HttpSession session,@AuthenticationPrincipal Principal pr
 public String aboutusPage(){
 	return "aboutus";
 }
+@RequestMapping(value="/contactus")
+public String contactusPage(){
+	return "contactus";
+}
 @RequestMapping(value="/login")
 public String login(){
 	return "login";
