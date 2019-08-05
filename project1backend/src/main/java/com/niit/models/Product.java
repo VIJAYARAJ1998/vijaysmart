@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Table
 public class Product {
 	@Id  // - property id unique and not null
-	@GeneratedValue(strategy=GenerationType.AUTO) //auto generation - automatically generate the value for id
+	@GeneratedValue(strategy=GenerationType.AUTO) //auto generation - automatically generate the value for i
 private int id;
 	@NotEmpty(message="Productname cannot be empty")
 private String productname;
@@ -33,6 +33,14 @@ public Category getCategory() {
 }
 public void setCategory(Category category) {
 	this.category = category;
+}
+@ManyToOne
+private Supplier supplier;
+public Supplier getSupplier() {
+	return supplier;
+}
+public void setSupplier(Supplier supplier) {
+	this.supplier = supplier;
 }
 @Transient
 private MultipartFile image;
