@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ include file="header.jsp"%>
+<%@include file="header.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,6 +30,7 @@ $(document).ready(function(){
 					<th>Product Name</th>
 					<th>Price</th>
 					<th>Category</th>
+					<th>Supplier</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -45,7 +46,8 @@ $(document).ready(function(){
 						<td><a
 							href="<c:url value='/all/getproduct/${p.id }'></c:url>">${p.productname }</a></td>
 						<td>${p.price }</td>
-						<td>${p.category.categoryname }</td>
+						<td>${p.category.categoryname}</td>
+						<td>${p.supplier.supplierName}</td>
 						<td>
 						
 						   <a href="<c:url value='/all/getproduct/${p.id }'></c:url>">
@@ -58,6 +60,7 @@ $(document).ready(function(){
 								
 								<a href="<c:url value='/admin/getupdateform/${p.id }'></c:url>"><span
 								class="glyphicon glyphicon-pencil"></span></a>
+								
 								  </security:authorize>
 									</td>
                               
