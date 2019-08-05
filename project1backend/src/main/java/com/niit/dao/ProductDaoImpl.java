@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.models.Category;
 import com.niit.models.Product;
+import com.niit.models.Supplier;
 //tells the Spring Container to create a bean of type ProductDao
 //name of the bean - productDaoImpl
 @Repository
@@ -81,7 +82,12 @@ public ProductDaoImpl(){
 		return categories;
 	}
 	
-	
+	public List<Supplier>ListSuppliers() {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from supplier");
+		List<Supplier> categories=query.list();
+		return ListSuppliers();
+	}
 
 }
 
