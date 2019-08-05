@@ -20,7 +20,7 @@ public class suppliercontroller
 	@Autowired
 	SupplierDao supplierDao;
 
-	@RequestMapping("/supplier")
+	@RequestMapping("admin/getsupplierform")
 	public String showCategory(Model m)
 	{
 		List<Supplier> listSuppliers=supplierDao.listSuppliers();
