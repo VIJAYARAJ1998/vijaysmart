@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ include file="header.jsp" %>
+<%@include file="header.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,8 +17,7 @@ Clear Cart
 </c:if>
 <table class="table table-striped">
 <thead id="thead">
-<tr><th>ProductName</th><th>Quantity</th><th>Total Price</th><th>Remove</th>
-</tr>
+<tr><th>ProductName</th><th>Quantity</th><th>Total Price</th><th>Remove</th><th>Update</th></tr>
 </thead>
 <c:set var="grandTotal" value="0"></c:set>
 <tbody id="tbody"><!-- cartItems is List<CartItem>, cartItem is CartItem obj -->
@@ -33,7 +32,9 @@ Clear Cart
 
 <span class="glyphicon glyphicon-remove" ></span>Remove
 </a></td>
-
+<td><a href="<c:url value='/cart/Updatecartitem/${cartItem.cartItemId }'></c:url>" class="label label-danger" pull-left >
+<span class="glyphicon glyphicon-update" ></span>update
+</a></td>
 </tr>
 </c:forEach>
 </tbody>
@@ -42,9 +43,10 @@ Total Price : ${grandTotal }
 <c:if test="${empty(cartItems) }">
 <h3>Your Cart is Empty</h3>
 </c:if>
-<c:if test="${ !empty(cartItems) }">
-<a href="<c:url value='/cart/shippingaddressform'></c:url>" class="btn btn-success pull-right">
-<span class="glyphicon glyphicon-shopping-cart"></span> Place Order  </a>
+<c:if test="${!empty(cartItems) }">
+<%-- <a href="<c:url value='/cart/shippingaddressform/${cartItem.cartItemId}'></c:url>" class="btn btn-success pull-right"> --%>
+<a href="<c:url value='/cart/shippingaddressform/'></c:url>" class="btn btn-success pull-right">
+<span class="glyphicon glyphicon-shopping-cart"></span> create Order  </a>
 </c:if>
 </div>
 
