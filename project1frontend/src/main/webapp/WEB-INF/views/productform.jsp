@@ -50,7 +50,15 @@
 			<td><form:select path="category.categoryId"><!-- FK column value -->
 			<!-- value is to set the value for the path category.id -->
 		    <c:forEach items="${categories}" var="c">
-		    <form:option value="${c.categoryId }">${c.categoryName}</form:option>
+		    <form:option value="${c.categoryId }">${c.categoryname}</form:option>
+		    </c:forEach>
+			</form:select></td></tr>
+			<tr><td>Select the supplier</td>
+			
+			<td><form:select path="supplier.supplierId"><!-- FK column value -->
+			<!-- value is to set the value for the path category.id -->
+		    <c:forEach items="${listsuppliers}" var="s">
+		    <form:option value="${s.supplierId }">${s.supplierName}</form:option>
 		    </c:forEach>
 			</form:select></td></tr>
 			<tr><td>Upload image</td><td>
@@ -67,6 +75,7 @@
 
 	</form:form>
 	</div>
+	
 </body>
 </html>
 
