@@ -11,7 +11,6 @@ public class Supplier {
 	@Id
 	@GeneratedValue
 	int supplierId;
-	
 	public int getSupplierId() {
 		return supplierId;
 	}
