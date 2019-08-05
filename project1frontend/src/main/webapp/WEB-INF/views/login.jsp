@@ -19,13 +19,8 @@
 	<!--Custom styles-->
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body background="resources/images/images.jpg">
 <div class="container">
-	<div class="row">
-        <p>
-        <a href="http://bootsnipp.com/iframe/x95Q" class="btn btn-lg btn-success" target="_blank"><span class="glyphicon glyphicon-fullscreen"></span></a>
-        </p>  
-         </div>
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
