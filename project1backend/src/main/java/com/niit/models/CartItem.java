@@ -14,6 +14,8 @@ private int cartItemId;
 	@ManyToOne
 private Product product;
 	@ManyToOne
+private Category category;
+	@ManyToOne
 private User user;
 private int quantity;
 private double totalPrice;
