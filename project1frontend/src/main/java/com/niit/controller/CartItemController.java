@@ -1,4 +1,4 @@
-package com.niit.controller;
+ package com.niit.controller;
 
 import java.security.Principal;
 import java.util.Date;
@@ -75,6 +75,15 @@ private CartItemDao cartItemDao;
     	
     	//select * from cartitem where user_email=? - to execute the query redirect /cart/getcart
     }
+    @RequestMapping(value="/cart/Updatecartitem/{cartItemId}")
+    public String updateCartItem(@PathVariable("cartItemId") int cartItemId,Model m){
+    	//CartItem cartItem=cartItemDao.getCart(cartItemId )
+    	//cartItemDao.updatecartItem(cartItemId);
+    	 return " updatecartitem";
+    	
+    	//select * from cartitem where user_email=? - to execute the query redirect /cart/getcart
+    }
+    
     @RequestMapping(value="/cart/clearcart")
     public String clearCart(@AuthenticationPrincipal Principal principal){
     	//Get list of cartItems 
@@ -152,7 +161,6 @@ private CartItemDao cartItemDao;
     	model.addAttribute("customerorder",customerOrder);//order=[orderId,purchaseDate,grandTotal,User]
     	model.addAttribute("cartItems",cartItems);
     	session.setAttribute("cartSize", 0);
-    	return "orderDetails";
+    	return "Orderconfirm";
     }
 }
-
