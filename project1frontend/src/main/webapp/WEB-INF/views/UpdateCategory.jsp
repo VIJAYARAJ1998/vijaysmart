@@ -22,7 +22,7 @@
 			<tr>
 				<td>CategoryName</td>
 				<td><input type="text" name="catName"
-					value="${categorydata.categoryName}" /></td>
+					value="${categorydata.categoryname}" /></td>
 			</tr>
 			<tr>
 				<td>CategoryDesc</td>
