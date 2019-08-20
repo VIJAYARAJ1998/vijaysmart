@@ -23,6 +23,8 @@ public class CategoryController
 	CategoryDao categoryDao;
 
 	@RequestMapping("/admin/getCategoryform")
+	
+	
 	public String showCategory(Model m)
 	{
 		List<Category> getAllCategories=categoryDao.getAllCategories();
