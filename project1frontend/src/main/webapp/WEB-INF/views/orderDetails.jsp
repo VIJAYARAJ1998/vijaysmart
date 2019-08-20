@@ -113,6 +113,8 @@
         </div>
 
 
+<a href="<c:url value='/successpage/'></c:url>">
+<span class="glyphicon glyphicon-shopping-cart"></span> NEXT  </a>
 
 
 </body>
