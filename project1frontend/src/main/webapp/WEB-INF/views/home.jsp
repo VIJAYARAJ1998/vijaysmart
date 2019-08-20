@@ -16,9 +16,9 @@
                 <li data-target="#myCarousel" data-slide-to="2"></li>
                 <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
-            <div class="carousel-inner" role="listbox">
+             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="img" src="resources/images/image 1.jpeg" alt="first slide" height="100%" width="100%">
+                    <img class="img" src="resources/images/5.jpg" alt="first slide" height="100%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>WELCOME TO THE KITCHEN APPLIANCES</h1>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                  <div class="item">
-                    <img class="img" src="resources/images/image 2.jpg" alt="Second slide" height="100%" width="100%">
+                    <img class="img" src="resources/images/141.png" alt="Second slide" height="500%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>ALL IN ONE WORLD</h1>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="item ">
-                    <img class="img" src="resources/images/image 3.png" alt="Third slide" height="100%" width="100%">
+                    <img class="img" src="resources/images/8.jpg" alt="Third slide" height="100%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>LOVE YOUR WORK, MAKE TIME RELAX TO SEE THE WORLD</h1>
@@ -45,7 +45,25 @@
                     </div>
                 </div>
                  <div class="item">
-                    <img class="img" src="resources/images/image 4.jpg" alt="forth slide" height="100%" width="100%">
+                    <img class="img" src="resources/images/11.jpg" alt="forth slide" height="150%" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>MORE U LOVE MORE U CAN BUY</h1>
+                            <p>online shopping can make your life more easier!!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img class="img" src="resources/images/19.jpg" alt="forth slide" height="150%" width="100%">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>MORE U LOVE MORE U CAN BUY</h1>
+                            <p>online shopping can make your life more easier!!</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="item">
+                    <img class="img" src="resources/images/9.png" alt="forth slide" height="150%" width="100%">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>MORE U LOVE MORE U CAN BUY</h1>
@@ -54,34 +72,45 @@
                     </div>
                 </div>
             </div>
-            <div class="item">
-            <div style= float: center; ">
-                    <img class="img"   src="resources/images/images4.png" alt="seventh slide" height="100%" width="100%">
-                    <div class="container">
-                            <h1>ALL IN ONE WORLD</h1>
-                            <p>Art of Invisibility</p>
-                        </div>
-                    </div>
-                </div>
+           <br>
+           <br>
+           
                 <div class="item">
-                <div style="width: 500px; height: 750px; float: right; ">
-                    <img class="img" src="resources/images/images3.jfif" alt="sixth slide" height="50%" width="75%">
+                <div style="width: 550px; height:800px; float: right; ">
+                    <img class="img" src="resources/images/1.jpg" alt="fifth slide" height="50%" width="100%">
                     <div class="container">
-                            <h1>ALL IN ONE WORLD</h1>
-                            <p>Art of Invisibility</p>
+                            <h1>SPECIAL DISCOUNTS</h1>
+                            <p>home festivals</p>
                         </div>
                     </div>
                 </div>
                  
                  <div class="item">
-                    <img class="img" src="resources/images/images2.jpg" alt="fifth slide" height="50%" width="50%">
+                  <div style="width: 550px; height:800px; float: left; ">
+                    <img class="img" src="resources/images/2.jpg" alt="sixth slide" height="50%" width="100%">
                     <div class="container">
-                            <h1>ALL IN ONE WORLD</h1>
-                            <p>Art of Invisibility</p>
+                            <h1>NICE CASHBACKS</h1>
+                            <p>gifts too</p>
                         </div>
                     </div>
                 </div>
-                
+                 <div class="item">
+                <div style="width: 550px; height:800px; float: right; ">
+                    <img class="img" src="resources/images/15.jpg" alt="seventh slide" height="50%" width="100%">
+                    <div class="container">
+                           
+                        </div>
+                    </div>
+                </div>
+                 
+                 <div class="item">
+                  <div style="width: 550px; height:800px; float: left; ">
+                    <img class="img" src="resources/images/17.jpg" alt="eighth slide" height="50%" width="100%">
+                    <div class="container">
+                          
+                        </div>
+                    </div>
+                </div>
                 
             
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
