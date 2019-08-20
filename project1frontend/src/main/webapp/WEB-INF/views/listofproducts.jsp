@@ -45,6 +45,8 @@ $(document).ready(function(){
 					   <td><img src="<c:url value='/resources/images/${p.id }.png'></c:url>" height="30px" width="30px"></td>
 						<td><a
 							href="<c:url value='/all/getproduct/${p.id }'></c:url>">${p.productname }</a></td>
+							<a href="<c:url value='/all/getproduct/${s.id }'></c:url>">${s.SupplierName}</a></td>
+						
 						<td>${p.price }</td>
 						<td>${p.category.categoryname}</td>
 						<td>${p.supplier.supplierName}</td>
