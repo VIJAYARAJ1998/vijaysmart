@@ -161,6 +161,147 @@ private CartItemDao cartItemDao;
     	model.addAttribute("customerorder",customerOrder);//order=[orderId,purchaseDate,grandTotal,User]
     	model.addAttribute("cartItems",cartItems);
     	session.setAttribute("cartSize", 0);
-    	return "Orderconfirm";
+    	return "orderconfirm";
     }
+    @RequestMapping(value="/cart/shippingconform")
+    public String getshippingconform(@AuthenticationPrincipal Principal principal,Model model){
+    	if(principal==null)
+    		return "login";
+    	String email=principal.getName();
+    	User user=cartItemDao.getUser(email);
+    	Customer customer=user.getCustomer();
+    	ShippingAddress shippingAddress=customer.getShippingaddress();
+    	model.addAttribute("shippingaddress",shippingAddress);
+    	return "shippingconform";
+    }
+    @RequestMapping(value="/cart/orderDetails")
+    public String  shippingconform(@ModelAttribute ShippingAddress shippingaddress,
+    		Model model,
+    		@AuthenticationPrincipal Principal principal,HttpSession session){
+    	String email=principal.getName();
+    	User user=cartItemDao.getUser(email);
+    	
+    	Customer customer=user.getCustomer();
+    	customer.setShippingaddress(shippingaddress);//customer.shippingaddress -> updated shippingaddress obj
+    	customer.setUser(user);
+    	user.setCustomer(customer);//user.customer -> updated customer references
+    	
+    	
+    	List<CartItem> cartItems=cartItemDao.getCart(email);
+    	
+    	for(CartItem cartItem:cartItems){
+    		Product product=cartItem.getProduct();
+    		if((product.getQuantity()-cartItem.getQuantity())<0){
+    			cartItemDao.removeCartItem(cartItem.getCartItemId());
+    			model.addAttribute("productNA",product);
+    			return "productnotavailable";
+    		}
+    	}
+    	
+    	//Calculate grandTotal
+    	
+    	double grandTotal=0;
+    	for(CartItem cartItem:cartItems){//for(T o:collection)
+    		grandTotal=grandTotal+cartItem.getTotalPrice();
+    	}
+    	
+    	//create CustomerOrder object
+    	CustomerOrder customerOrder=new CustomerOrder();
+    	customerOrder.setPurchaseDate(new Date());
+    	customerOrder.setUser(user);//customerOrder -> user -> customer -> shippingaddress
+    	customerOrder.setGrandTotal(grandTotal);
+    	if(cartItems.size()>0)
+    	 customerOrder=cartItemDao.createCustomerOrder(customerOrder);
+    	 
+    	 
+    	//Remove all cartitems from the cartItem table
+    	//decrement the quantity of the product
+    	//add customerorder and List<CartItem> to an model attributes and return "orderdetails"
+    	 
+    	for(CartItem cartItem:cartItems){
+    		Product product=cartItem.getProduct();
+    		//In stock =30
+    		//requested quantity=20
+    		//update product quantity=30-20 where id=?
+    		product.setQuantity(product.getQuantity() - cartItem.getQuantity());//decrement the product quantity
+    		productDao.updateProduct(product );//update product set quantity=7 where id=38
+    		cartItemDao.removeCartItem(cartItem.getCartItemId());
+    	}
+    	model.addAttribute("customerorder",customerOrder);//order=[orderId,purchaseDate,grandTotal,User]
+    	model.addAttribute("cartItems",cartItems);
+    	session.setAttribute("cartSize", 0);
+    	return "orderDetails";
+    }
+    @RequestMapping(value="/orderconfirm/")
+	public String showorderconfirmpage() 
+    {
+    	
+		return "orderconfirm";
+	}
+	@RequestMapping(value="/payment/")
+	
+		public String showpaymentpage(@ModelAttribute ShippingAddress shippingaddress,
+	    		Model model,
+	    		@AuthenticationPrincipal Principal principal,HttpSession session){
+	    	String email=principal.getName();
+	    	User user=cartItemDao.getUser(email);
+	    	
+	    	Customer customer=user.getCustomer();
+	    	customer.setShippingaddress(shippingaddress);//customer.shippingaddress -> updated shippingaddress obj
+	    	customer.setUser(user);
+	    	user.setCustomer(customer);//user.customer -> updated customer references
+	    	
+	    	
+	    	List<CartItem> cartItems=cartItemDao.getCart(email);
+	    	
+	    	for(CartItem cartItem:cartItems){
+	    		Product product=cartItem.getProduct();
+	    		if((product.getQuantity()-cartItem.getQuantity())<0){
+	    			cartItemDao.removeCartItem(cartItem.getCartItemId());
+	    			model.addAttribute("productNA",product);
+	    			return "productnotavailable";
+	    		}
+	    	}
+	    	
+	    	//Calculate grandTotal
+	    	
+	    	double grandTotal=0;
+	    	for(CartItem cartItem:cartItems){//for(T o:collection)
+	    		grandTotal=grandTotal+cartItem.getTotalPrice();
+	    	}
+	    	
+	    	//create CustomerOrder object
+	    	CustomerOrder customerOrder=new CustomerOrder();
+	    	customerOrder.setPurchaseDate(new Date());
+	    	customerOrder.setUser(user);//customerOrder -> user -> customer -> shippingaddress
+	    	customerOrder.setGrandTotal(grandTotal);
+	    	if(cartItems.size()>0)
+	    	 customerOrder=cartItemDao.createCustomerOrder(customerOrder);
+	    	 
+	    	 
+	    	//Remove all cartitems from the cartItem table
+	    	//decrement the quantity of the product
+	    	//add customerorder and List<CartItem> to an model attributes and return "orderdetails"
+	    	 
+	    	for(CartItem cartItem:cartItems){
+	    		Product product=cartItem.getProduct();
+	    		//In stock =30
+	    		//requested quantity=20
+	    		//update product quantity=30-20 where id=?
+	    		product.setQuantity(product.getQuantity() - cartItem.getQuantity());//decrement the product quantity
+	    		productDao.updateProduct(product );//update product set quantity=7 where id=38
+	    		cartItemDao.removeCartItem(cartItem.getCartItemId());
+	    	}
+	    	model.addAttribute("customerorder",customerOrder);//order=[orderId,purchaseDate,grandTotal,User]
+	    	model.addAttribute("cartItems",cartItems);
+	    	session.setAttribute("cartSize", 0);
+	    
+		
+		return "payment";
+	}
+	@RequestMapping(value="/successpage/")
+	public String showsuccesspagepage() {
+		return "successpage";
+	}
+
 }
